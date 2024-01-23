@@ -45,3 +45,19 @@ require("lazy").setup({
     },
   },
 })
+
+local emmet_options = {
+  filetypes = {
+    "html",
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "xml",
+    'php'
+  },
+  root_dir = function()
+    return vim.loop.cwd()
+  end
+}
+
+require('lspconfig').emmet_ls.setup(emmet_options)
