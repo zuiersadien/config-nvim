@@ -70,5 +70,6 @@ return {
       end
     })
   end
-}, { "nvim-treesitter/nvim-treesitter-angular" }
+}, { "nvim-treesitter/nvim-treesitter-angular" },
+  { 'nacro90/numb.nvim' }
 }

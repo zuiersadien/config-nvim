@@ -61,3 +61,4 @@ local emmet_options = {
 }
 
 require('lspconfig').emmet_ls.setup(emmet_options)
+require('numb').setup()
