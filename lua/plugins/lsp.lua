@@ -72,4 +72,24 @@ return {
   end
 }, { "nvim-treesitter/nvim-treesitter-angular" },
   { 'nacro90/numb.nvim' }
+  , { 'aquach/vim-http-client' },
+  { 'mattn/vim-http' },
+
+  {
+    'kristijanhusak/vim-dadbod-ui',
+    dependencies = {
+      { 'tpope/vim-dadbod',                     lazy = true },
+      { 'kristijanhusak/vim-dadbod-completion', ft = { 'mariadb', 'sql', 'mysql', 'plsql' }, lazy = true },
+    },
+    cmd = {
+      'DBUI',
+      'DBUIToggle',
+      'DBUIAddConnection',
+      'DBUIFindBuffer',
+    },
+    init = function()
+      -- Your DBUI configuration
+      vim.g.db_ui_use_nerd_fonts = 1
+    end,
+  },
 }
