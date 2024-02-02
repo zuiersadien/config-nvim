@@ -20,5 +20,6 @@ vim.api.nvim_set_keymap('n', 'zK', [[:lua require('ufo').peekFoldedLinesUnderCur
 vim.api.nvim_set_keymap('n', 'db', [[:DBUIToggle<CR>]],
   { noremap = true, silent = true, desc = 'Abrir interfaz de vim-dadbod' })
 
--- vim.api.nvim_set_keymap('n', 'df', [[:'<,'>DB<CR>]],
+
+-- vim.api.nvim_set_keymap('n', 'df', [[:'<,'>DB<CR>]],-- vim.api.nvim_set_keymap('n', 'df', [[:'<,'>DB<CR>]],-- vim.api.nvim_set_keymap('n', 'df', [[:'<,'>DB<CR>]],
 --   { noremap = true, silent = true, desc = 'y ejecutar consulta' })

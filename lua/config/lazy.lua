@@ -49,9 +49,9 @@ require("lazy").setup({
 local emmet_options = {
   filetypes = {
     "html",
-    "typescript",
-    "javascript",
-    "javascriptreact",
+    -- "typescript",
+    -- "javascript",
+    -- "javascriptreact",
     "xml",
     'php'
   },
@@ -62,3 +62,28 @@ local emmet_options = {
 
 require('lspconfig').emmet_ls.setup(emmet_options)
 require('numb').setup()
+require('windex').setup()
+local function maximize_status()
+  return vim.t.maximized and ' ' or ''
+end
+
+require('lualine').setup {
+  sections = {
+    lualine_c = { maximize_status }
+  }
+}
+local colors = require("tokyonight.colors").setup()
+
+require("scrollbar").setup({
+  handle = {
+    color = colors.bg_highlight,
+  },
+  marks = {
+    Search = { color = colors.orange },
+    Error = { color = colors.error },
+    Warn = { color = colors.warning },
+    Info = { color = colors.info },
+    Hint = { color = colors.hint },
+    Misc = { color = colors.purple },
+  }
+})

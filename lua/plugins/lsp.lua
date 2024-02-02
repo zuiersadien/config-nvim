@@ -73,7 +73,6 @@ return {
 }, { "nvim-treesitter/nvim-treesitter-angular" },
   { 'nacro90/numb.nvim' }
   , { 'aquach/vim-http-client' },
-  { 'mattn/vim-http' },
 
   {
     'kristijanhusak/vim-dadbod-ui',
@@ -91,5 +90,18 @@ return {
       -- Your DBUI configuration
       vim.g.db_ui_use_nerd_fonts = 1
     end,
-  },
+  }, {
+  "nvim-zh/colorful-winsep.nvim",
+  config = true,
+  event = { "WinNew" },
+}, {
+  'declancm/windex.nvim',
+}, {
+  "karb94/neoscroll.nvim",
+  config = function()
+    require('neoscroll').setup {}
+  end
+}, {
+  "petertriho/nvim-scrollbar"
+},
 }
