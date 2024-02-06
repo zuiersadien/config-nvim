@@ -4,18 +4,20 @@
 vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true })
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { expr = true })
 
--- Open all folds
-vim.api.nvim_set_keymap('n', 'zR', [[:lua require('ufo').openAllFolds()<CR>]],
+vim.api.nvim_set_keymap('n', 'dt', '[[:NoNeckPain<CR>]]',
   { noremap = true, silent = true, desc = 'Open All Folds' })
-
--- Close all folds
-vim.api.nvim_set_keymap('n', 'zM', [[:lua require('ufo').closeAllFolds()<CR>]],
-  { noremap = true, silent = true, desc = 'Close All Folds' })
-
--- Peek folds
-vim.api.nvim_set_keymap('n', 'zK', [[:lua require('ufo').peekFoldedLinesUnderCursor()<CR>]],
-  { noremap = true, silent = true, desc = 'Peek Folds' })
-
+-- Open all folds
+-- vim.api.nvim_set_keymap('n', 'zR', [[:lua require('ufo').openAllFolds()<CR>]],
+--   { noremap = true, silent = true, desc = 'Open All Folds' })
+--
+-- -- Close all folds
+-- vim.api.nvim_set_keymap('n', 'zM', [[:lua require('ufo').closeAllFolds()<CR>]],
+--   { noremap = true, silent = true, desc = 'Close All Folds' })
+--
+-- -- Peek folds
+-- vim.api.nvim_set_keymap('n', 'zK', [[:lua require('ufo').peekFoldedLinesUnderCursor()<CR>]],
+--   { noremap = true, silent = true, desc = 'Peek Folds' })
+--
 
 vim.api.nvim_set_keymap('n', 'db', [[:DBUIToggle<CR>]],
   { noremap = true, silent = true, desc = 'Abrir interfaz de vim-dadbod' })

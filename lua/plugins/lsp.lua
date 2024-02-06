@@ -103,5 +103,7 @@ return {
   end
 }, {
   "petertriho/nvim-scrollbar"
-},
+}, {
+  "shortcuts/no-neck-pain.nvim"
+}
 }
