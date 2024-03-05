@@ -1,23 +1,24 @@
 return {
-  { 'shmup/vim-sql-syntax' },
+  { "shmup/vim-sql-syntax" },
   {
-    'HiPhish/rainbow-delimiters.nvim',
+    "HiPhish/rainbow-delimiters.nvim",
     config = function()
-      require('nvim-treesitter.configs').setup {
+      require("nvim-treesitter.configs").setup({
         rainbow = {
           enable = true,
           -- list of languages you want to disable the plugin for
-          disable = { 'jsx', 'cpp' },
+          disable = { "jsx", "cpp" },
           -- Which query to use for finding delimiters
-          query = 'rainbow-parens',
+          query = "rainbow-parens",
           -- Highlight the entire buffer all at once
           -- strategy = require('ts-rainbow').strategy.global,
-        }
-      }
-    end
-  }, {
-  'wfxr/minimap.vim',
-},
+        },
+      })
+    end,
+  },
+  {
+    "wfxr/minimap.vim",
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -59,51 +60,58 @@ return {
         end, { "i", "s" }),
       })
     end,
-  }, {
-  'kevinhwang91/nvim-ufo',
-  dependencies = 'kevinhwang91/promise-async',
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = "kevinhwang91/promise-async",
 
-  config = function()
-    require('ufo').setup({
-      provider_selector = function()
-        return { 'lsp', 'indent' }
-      end
-    })
-  end
-}, { "nvim-treesitter/nvim-treesitter-angular" },
-  { 'nacro90/numb.nvim' }
-  , { 'aquach/vim-http-client' },
+    config = function()
+      require("ufo").setup({
+        provider_selector = function()
+          return { "lsp", "indent" }
+        end,
+      })
+    end,
+  },
+  { "nvim-treesitter/nvim-treesitter-angular" },
+  { "nacro90/numb.nvim" },
+  { "aquach/vim-http-client" },
 
   {
-    'kristijanhusak/vim-dadbod-ui',
+    "kristijanhusak/vim-dadbod-ui",
     dependencies = {
-      { 'tpope/vim-dadbod',                     lazy = true },
-      { 'kristijanhusak/vim-dadbod-completion', ft = { 'mariadb', 'sql', 'mysql', 'plsql' }, lazy = true },
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "mariadb", "sql", "mysql", "plsql", "psql" }, lazy = true },
     },
     cmd = {
-      'DBUI',
-      'DBUIToggle',
-      'DBUIAddConnection',
-      'DBUIFindBuffer',
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
     },
     init = function()
       -- Your DBUI configuration
       vim.g.db_ui_use_nerd_fonts = 1
     end,
-  }, {
-  "nvim-zh/colorful-winsep.nvim",
-  config = true,
-  event = { "WinNew" },
-}, {
-  'declancm/windex.nvim',
-}, {
-  "karb94/neoscroll.nvim",
-  config = function()
-    require('neoscroll').setup {}
-  end
-}, {
-  "petertriho/nvim-scrollbar"
-}, {
-  "shortcuts/no-neck-pain.nvim"
-}
+  },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinNew" },
+  },
+  {
+    "declancm/windex.nvim",
+  },
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup({})
+    end,
+  },
+  {
+    "petertriho/nvim-scrollbar",
+  },
+  {
+    "shortcuts/no-neck-pain.nvim",
+  },
 }
