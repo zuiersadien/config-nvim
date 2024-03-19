@@ -16,14 +16,10 @@ return {
       })
     end,
   },
-  {
-    "wfxr/minimap.vim",
-  },
+
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
+    dependencies = { "hrsh7th/cmp-emoji" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
@@ -76,7 +72,6 @@ return {
   { "nvim-treesitter/nvim-treesitter-angular" },
   { "nacro90/numb.nvim" },
   { "aquach/vim-http-client" },
-
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
@@ -99,9 +94,8 @@ return {
     config = true,
     event = { "WinNew" },
   },
-  {
-    "declancm/windex.nvim",
-  },
+
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
   {
     "karb94/neoscroll.nvim",
     config = function()
@@ -114,4 +108,56 @@ return {
   {
     "shortcuts/no-neck-pain.nvim",
   },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = function()
+      require("colorful-winsep").setup()
+    end,
+    event = { "WinNew" },
+  },
+  {
+    "jyscao/ventana.nvim",
+    keys = {
+      { "<leader>wt", "<cmd>ventanatranspose<cr>", desc = "ventana transpose" },
+      { "<leader>wf", "<cmd>VentanaShift<cr>", desc = "VentanaShift" },
+      { "<leader>wg", "<cmd>VentanaShiftMaintainLinear<cr>", desc = "VentanaShift and Line" },
+      -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    },
+  },
+  {
+    "dhruvasagar/vim-zoom",
+    -- keys = {
+    --
+    --   { "<leader>wz", "call zoom#toggle()", desc = "ventana zoom" },
+    -- },
+  },
+
+  {
+    "akinsho/toggleterm.nvim",
+    config = true,
+    cmd = "ToggleTerm",
+    build = ":ToggleTerm",
+    keys = { { "<A-3>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" } },
+    opts = {
+      open_mapping = "<A-3>",
+      direction = "vertical",
+      shade_filetypes = {},
+      size = 80,
+      hide_numbers = true,
+      insert_mappings = true,
+      terminal_mappings = true,
+      start_in_insert = true,
+      close_on_exit = true,
+    },
+  },
+  -- {
+  --   "nyngwang/NeoZoom.lua",
+  --   config = function()
+  --     require("neo-zoom").setup()
+  --   end,
+  --   keys = {
+  --
+  --     { "<leader>wz", "<cmd>NeoZoomToggle<cr>", desc = "ventana zoom" },
+  --   },
+  -- },
 }

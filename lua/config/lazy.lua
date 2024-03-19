@@ -10,7 +10,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim",                                import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
@@ -53,25 +53,17 @@ local emmet_options = {
     -- "javascript",
     -- "javascriptreact",
     "xml",
-    'php'
+    "php",
   },
   root_dir = function()
     return vim.loop.cwd()
-  end
+  end,
 }
 
-require('lspconfig').emmet_ls.setup(emmet_options)
-require('numb').setup()
-require('windex').setup()
-local function maximize_status()
-  return vim.t.maximized and ' ' or ''
-end
+require("lspconfig").emmet_ls.setup(emmet_options)
+require("numb").setup()
 
-require('lualine').setup {
-  sections = {
-    lualine_c = { maximize_status }
-  }
-}
+require("colorful-winsep").setup()
 local colors = require("tokyonight.colors").setup()
 
 require("scrollbar").setup({
@@ -85,5 +77,23 @@ require("scrollbar").setup({
     Info = { color = colors.info },
     Hint = { color = colors.hint },
     Misc = { color = colors.purple },
-  }
+  },
+  neotree = {
+    default_open_cmd = "Neotree close",
+  },
+})
+
+require("neo-tree").setup({
+  event_handlers = {
+
+    {
+      event = "file_opened",
+      handler = function(file_path)
+        -- auto close
+        -- vimc.cmd("Neotree close")
+        -- OR
+        require("neo-tree.command").execute({ action = "close" })
+      end,
+    },
+  },
 })
